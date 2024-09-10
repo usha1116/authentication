@@ -1,5 +1,5 @@
 const router= require("express").Router();
-const{User}=require("..models//user");
+const{User}=require("../models/user");
 const Joi =require("joi");
 const bcrypt =require("bcrypt");
 
@@ -29,8 +29,8 @@ router.post("/",async(req,res)=>{
 })
 const validate =(data)=>{
     const Schema=Joi.object({
-        email:joi.string().email().required().label("Email"),
-        password:joi.string().required().label("Password")
+        email:joi.String().email().required().label("Email"),
+        password:joi.String().required().label("Password")
     });
     return Schema.validate(data);
 }
